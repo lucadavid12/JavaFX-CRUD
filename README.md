@@ -1,7 +1,7 @@
 # JavaFX Interface for MySQL database
 
 
-## Techonolies used
+## Technologies used
 -
 -
 -
