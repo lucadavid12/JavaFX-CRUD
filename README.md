@@ -7,3 +7,4 @@
 -
 
 ### Main page
+![main](/public/main.png)
