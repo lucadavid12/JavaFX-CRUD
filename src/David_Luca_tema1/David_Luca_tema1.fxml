@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="David_Luca_tema1.David_Luca_tema1Controller">
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="676.0">
+      	<children>
+      		<TabPane prefHeight="473.0" prefWidth="676.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      			<tabs>
+      				<Tab fx:id="tab_Judecatori" text="Judecatori">
+      					<content>
+      						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="444.0" prefWidth="659.0">
+      							<children>
+      								<Label layoutX="34.0" layoutY="23.0" text="Datele din tabela Judecatori" AnchorPane.bottomAnchor="403.33333333333337" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="494.0" AnchorPane.topAnchor="23.0" />
+      								<Button fx:id="buton_IncarcareJudecator" layoutX="59.0" layoutY="86.0" mnemonicParsing="false" onAction="#adaugaJudecator" prefHeight="37.0" prefWidth="111.0" text="Adauga date" AnchorPane.bottomAnchor="321.3333333333333" AnchorPane.leftAnchor="59.0" AnchorPane.rightAnchor="506.3333333333333" AnchorPane.topAnchor="86.0" />
+      								<TableView fx:id="tabela_Judecatori" editable="true" layoutX="282.0" layoutY="18.0" prefHeight="409.0" prefWidth="373.0" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="282.0" AnchorPane.rightAnchor="21.0" AnchorPane.topAnchor="18.0">
+      									<columns>
+      										<TableColumn fx:id="atribut_idjudecator" onEditStart="#incarcaJudecator" prefWidth="66.66668701171875" text="ID" />
+      										<TableColumn fx:id="atribut_numeJ" minWidth="0.0" prefWidth="147.33331298828125" text="Nume" />
+      										<TableColumn fx:id="atribut_prenumeJ" prefWidth="156.66668701171875" text="Prenume" />
+      									</columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+      								</TableView>
+      								<Button fx:id="buton_ModificaJudecator" layoutX="60.0" layoutY="296.0" mnemonicParsing="false" onAction="#schimbaJud" prefHeight="37.0" prefWidth="109.0" text="Modifica date" AnchorPane.bottomAnchor="111.33333333333337" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="508.0" AnchorPane.topAnchor="296.0" />
+      								<Button fx:id="buton_StergeJudecator" layoutX="60.0" layoutY="344.0" mnemonicParsing="false" onAction="#stergeJudecatori" prefHeight="35.0" prefWidth="107.0" text="Sterge date" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="344.0" />
+                              <TextField fx:id="atribut_inputNumeJ" layoutX="107.0" layoutY="143.0" />
+                              <Label layoutX="40.0" layoutY="147.0" text="Nume" />
+                              <Label layoutX="32.0" layoutY="187.0" text="Prenume" />
+                              <TextField fx:id="atribut_inputPrenumeJ" layoutX="107.0" layoutY="183.0" />
+                              <Button fx:id="buton_refreshJ" layoutX="60.0" layoutY="244.0" mnemonicParsing="false" onAction="#incarcaJudecator" prefHeight="34.0" prefWidth="104.0" text="Refresh" />
+      							</children>
+      						</AnchorPane>
+      					</content>
+      				</Tab>
+      				<Tab fx:id="tab_Dosar" text="Dosar">
+      					<content>
+      						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+      							<children>
+      								<Label layoutX="51.0" layoutY="35.0" text="Datele din tabela Dosar" />
+      								<Button fx:id="buton_IncarcareDosar" layoutX="68.0" layoutY="95.0" mnemonicParsing="false" onAction="#adaugaDosar" text="Adauga dosar" />
+      								<TableView fx:id="tabela_Dosar" editable="true" layoutX="246.0" layoutY="58.0" prefHeight="376.0" prefWidth="411.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="246.0" AnchorPane.rightAnchor="19.0" AnchorPane.topAnchor="58.0">
+      									<columns>
+                                    <TableColumn fx:id="atribut_iddosar" editable="false" onEditStart="#incarcaDosar" prefWidth="31.333343505859375" text="IDd" />
+      										<TableColumn fx:id="atribut_idjudecator1" prefWidth="32.66668701171875" text="IDp" />
+      										<TableColumn fx:id="atribut_idproces1" prefWidth="34.6666259765625" text="IDj" />
+      										<TableColumn fx:id="atribut_nrD" prefWidth="116.66668701171875" text="Numar dosar" />
+      										<TableColumn fx:id="atribut_denumireD" prefWidth="139.33331298828125" text="Denumire dosar" />
+      										<TableColumn fx:id="atribut_status" prefWidth="50.6666259765625" text="Status" />
+      									</columns>
+      								</TableView>
+      								<Button fx:id="buton_ModificareDosar" layoutX="475.0" layoutY="19.0" mnemonicParsing="false" onAction="#modificaDosar" text="Modifica dosar" />
+      								<Button fx:id="buton_StergereDosar" layoutX="578.0" layoutY="19.0" mnemonicParsing="false" onAction="#stergeDosar" text="Sterge dosar" />
+                              <TextField fx:id="inputNrDosar" layoutX="90.0" layoutY="140.0" />
+                              <TextField fx:id="inputDenumireDosar" layoutX="90.0" layoutY="188.0" />
+                              <Label layoutX="34.0" layoutY="144.0" text="Numar" />
+                              <Label layoutX="26.0" layoutY="192.0" text="Denumire" />
+                              <Label layoutX="36.0" layoutY="237.0" text="Status" />
+                              <TextField fx:id="inputStatus" layoutX="90.0" layoutY="234.0" />
+                              <Button fx:id="buton_refreshD" layoutX="407.0" layoutY="19.0" mnemonicParsing="false" onAction="#incarcaDosar" text="Refresh" />
+                              <TextField fx:id="inputIDJ_D" layoutX="90.0" layoutY="288.0" />
+                              <TextField fx:id="inputIDP_D" layoutX="90.0" layoutY="339.0" />
+                              <Label layoutX="15.0" layoutY="292.0" text="ID judecator" />
+                              <Label layoutX="22.0" layoutY="343.0" text="ID proces" />
+      							</children>
+      						</AnchorPane>
+      					</content>
+      				</Tab>
+      				<Tab fx:id="tab_Procese" text="Procese">
+      					<content>
+      						<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+      							<children>
+      								<Label layoutX="34.0" layoutY="14.0" text="Datele din tabela Procese" />
+      								<Button fx:id="buton_StergeProces" layoutX="595.0" layoutY="18.0" mnemonicParsing="false" onAction="#stergeProces" text="Sterge" />
+      								<Button fx:id="buton_ModificaProces" layoutX="520.0" layoutY="18.0" mnemonicParsing="false" onAction="#modificaProces" text="Modifica" />
+      								<Button fx:id="buton_IncarcaProces" layoutX="43.0" layoutY="43.0" mnemonicParsing="false" onAction="#adaugaProces" text="Adauga" />
+      								<TableView fx:id="tabela_Procese" editable="true" layoutX="150.0" layoutY="56.0" prefHeight="373.0" prefWidth="515.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="56.0">
+      									<columns>
+      										<TableColumn fx:id="atribut_idproces" editable="false" onEditStart="#incarcaProces" prefWidth="26.666686415672302" text="ID" />
+      										<TableColumn fx:id="atribut_numeR" prefWidth="65.33334350585938" text="Nume" />
+      										<TableColumn fx:id="atribut_prenumeR" prefWidth="73.33338165283203" text="Prenume" />
+      										<TableColumn fx:id="atribut_numeP" prefWidth="76.00006103515625" text="Nume" />
+      										<TableColumn fx:id="atribut_prenumeP" prefWidth="81.99992370605469" text="Prenume" />
+      										<TableColumn fx:id="atribut_dataproces" prefWidth="77.33331298828125" text="Data proces" />
+      										<TableColumn fx:id="atribut_obiectulcauzei" prefWidth="118.00003051757812" text="Obiectul cauzei" />
+      									</columns>
+      								</TableView>
+      								<Label layoutX="206.0" layoutY="34.0" text="Reclamant" />
+      								<Label layoutX="375.0" layoutY="34.0" text="Parat" />
+                              <Label layoutX="32.0" layoutY="81.0" text="Nume reclamant" />
+                              <Label layoutX="27.0" layoutY="136.0" text="Prenume reclamant" />
+                              <TextField fx:id="inputNumeR" layoutX="14.0" layoutY="99.0" prefHeight="25.0" prefWidth="127.0" />
+                              <TextField fx:id="inputPrenumeR" layoutX="15.0" layoutY="153.0" prefHeight="25.0" prefWidth="127.0" />
+                              <TextField fx:id="inputNumeP" layoutX="15.0" layoutY="209.0" prefHeight="25.0" prefWidth="127.0" />
+                              <TextField fx:id="inputPrenumeP" layoutX="14.0" layoutY="268.0" prefHeight="25.0" prefWidth="124.0" />
+                              <Label layoutX="40.0" layoutY="191.0" text="Nume parat" />
+                              <Label layoutX="33.0" layoutY="251.0" text="Prenume parat" />
+                              <Label layoutX="40.0" layoutY="311.0" text="Data proces" />
+                              <Label layoutX="31.0" layoutY="369.0" text="Obiectul cauzei" />
+                              <TextField fx:id="inputData" layoutX="12.0" layoutY="328.0" prefHeight="25.0" prefWidth="127.0" />
+                              <TextField fx:id="inputObiect" layoutX="12.0" layoutY="387.0" prefHeight="25.0" prefWidth="127.0" />
+                              <Button fx:id="buton_refreshP" layoutX="448.0" layoutY="18.0" mnemonicParsing="false" onAction="#incarcaProces" text="Refresh" />
+      							</children>
+      						</AnchorPane>
+      					</content>
+      				</Tab>
+      			</tabs>
+      		</TabPane>
+      	</children>
+      </AnchorPane>
+   </center>
+</BorderPane>
